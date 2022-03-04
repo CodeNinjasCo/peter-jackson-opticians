@@ -1,0 +1,20 @@
+.env
+/vendor/
+
+# Docker
+data
+wordpress
+
+# Wordpress
+public/wp-content/*
+!public/wp-content/themes/
+public/wp-content/themes/*
+!public/wp-content/plugins/
+public/wp-content/plugins/*
+
+## Plugins to include
+!public/wp-content/plugins/codeninjas/
+
+## Themes to include
+!public/wp-content/themes/betheme/
+!public/wp-content/themes/betheme-child/

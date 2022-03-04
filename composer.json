@@ -1,0 +1,12 @@
+{
+    "name": "codeninjas/peter-jackson",
+    "authors": [
+        {
+            "name": "Code Ninjas",
+            "email": "hello@codeninjas.co"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

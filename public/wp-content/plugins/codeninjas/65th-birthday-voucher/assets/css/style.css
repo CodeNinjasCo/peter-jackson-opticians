@@ -1,0 +1,74 @@
+body {
+    background-image: url('../img/pj-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+body:before {
+    content: ' ';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.content-wrapper {
+    background-image: url('../img/balloons.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 10px;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.8);
+    border: 3px solid rgb(199, 154, 65);
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    color: rgb(199, 154, 65);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.subtext {
+    font-size: 1rem;    
+}
+
+form {
+    text-align: left;
+}
+
+.btn {
+    background: #356e65;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+}
+
+.btn-secondary {
+    background: #c46b48;
+}
+
+@media (min-width: 768px) {
+    .content-wrapper {
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+        
+    .subtext {
+        font-size: 1.5rem;    
+    }
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="<?php echo $pluginUri ?>/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <title>Register My Voucher | Peter Jackson Opticians</title>
+</head>
+
+<body>
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-12 col-lg-10 offset-lg-1">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1">
+              <div class="content">
+                <img src="<?php echo $pluginUri ?>/assets/img/pj-logo.png" class="mb-3" />
+                <h1>Register your voucher</h1>
+                <p class="subtext">Enter you details below to register your voucher and get £65 off towards
+                  examinations, glasses and/or sunglasses.</p>
+
+                <?php if ($status === 'submitted') : ?>
+
+                  <div class="alert alert-success text-center" role="alert">
+                    <h4 class="alert-heading">Thank you</h4>
+                    <p>Thank you for registering your voucher. We will be in touch with you soon.</p>
+                  </div>
+
+                <?php else : ?>
+
+                  <?php if ($status === 'dup'): ?>
+
+                    <div class="alert alert-info text-center" role="alert">
+                      <p>
+                        This email address has already registered. Please use a different email address.
+                        <br />If you think this is incorect please get in touch with us.
+                      </p>
+                    </div>
+
+                  <?php elseif ($errors) : ?>
+
+                    <div class="alert alert-danger text-left" role="alert">
+                      <p>Please correct the following errors:</p>
+                      <ul>
+                          <?php foreach ($errors as $error) : ?>
+                            <li><?php echo $error; ?></li>
+                          <?php endforeach; ?>
+                      </ul>
+                    </div>
+
+                  <?php endif; ?>
+
+                  <form method="post">
+                    <div class="row">
+                      <div class="col-12 col-lg-6">
+                        <div class="form-group">
+                          <label for="name">Name</label>
+                          <input type="text" class="form-control" id="name" placeholder="Your name" name="name" value="<?php echo $_POST['name'] ?? '' ?>">
+                        </div>
+                        <div class="form-group">
+                          <label for="address1">Address</label>
+                          <input type="text" class="form-control mb-1" id="address1" name="address1"
+                            placeholder="Address 1">
+                          <input type="text" class="form-control mb-1" id="address2" name="address2"
+                            placeholder="Address 2">
+                          <input type="text" class="form-control" id="postcode" name="postcode" placeholder="Postcode">
+                        </div>
+                        <div class="form-group">
+                          <label for="tel">Telephone number</label>
+                          <input type="text" class="form-control" id="tel" name="tel">
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <div class="form-group">
+                          <label for="dob">Date of birth</label>
+                          <input type="date" class="form-control" id="dob" placeholder="DD/MM/" name="dob">
+                        </div>
+                        <div class="form-group">
+                          <label for="emailAddress">Email address</label>
+                          <input type="email" class="form-control" id="emailAddress" placeholder="Your email address" name="email">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="lastTest">Date of last eye test</label>
+                          <input type="date" class="form-control" id="lastTest" name="last_test">
+                          <small id="lastTestHelp" class="form-text text-muted">Don't worry if you can't remember the exact date of your last exam. Enter the month and year that you think it was.</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">REGISTER VOUCHER</button>
+                        <a href="https://peterjacksonopticians.mysight.uk/Home/Welcome" class="btn btn-secondary btn-lg">BOOK NOW</a>
+                      </div>
+                    </div>
+                  </form>
+
+                  <div class="text-center mt-3">
+                      <a href="https://www.peterjacksonopticians.co.uk/"><small>Back to Homepage</small></a>
+                  </div>
+
+                <?php endif; ?>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
