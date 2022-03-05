@@ -8,18 +8,39 @@ Template: betheme
 Version: 1.6.2
 */
 
-.top_bar_right {
+.header-fixed #Top_bar {
+    opacity: 1 !important;
+}
+
+.header-fixed #Top_bar .top_bar_left {
     display: flex;
     align-items: center;
 }
 
+.header-fixed #Top_bar .logo {
+    margin: 0 10px;
+}
+
+.header-fixed #Top_bar .menu > li > a {
+    padding: 30px 0;
+}
+
+#Top_bar .menu > li > a span:not(.description) {
+    padding: 0 10px;
+}
+
+.top_bar_right {
+    display: flex !important;
+    align-items: center;
+}
+
 .top_bar_right_wrapper {
-    top: -25px !important;
+    padding-top: 0 !important;
+    margin-right: 0 !important;
 }
 
 .cn-header-right {
     color: white;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,12 +48,28 @@ Version: 1.6.2
 
 .cn-header-right a {
     color: white !important;
-    font-size: 30px;
+    font-size: 18px;
+}
+
+.cn-header-right .social {
+    display: none;
 }
 
 @media (min-width: 768px) {
     .top_bar_right_wrapper {
         top: 0 !important;
+    }
+
+    .cn-header-right {
+        margin-bottom: 10px;
+    }
+
+    .cn-header-right .social {
+        display: block;
+    }
+
+    .cn-header-right .social a {
+        font-size: 25px;
     }
 }
 

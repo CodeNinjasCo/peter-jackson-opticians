@@ -8,6 +8,8 @@
         </a>
     </div>
     <div class="phone">
-        <i class="plus icon-phone"></i> 0116 288 1121
+        <a href="tel:01162881121">
+            <i class="plus icon-phone"></i> 0116 288 1121
+        </a>
     </div>
 </div>
